@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard | PustakaKita</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;600;700&family=Fraunces:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="dashboard">
+  <header class="topbar">
+    <a class="brand" href="dashboard.html">Pustaka<b>Kita</b></a>
+    <nav aria-label="Navigasi utama">
+      <a href="dashboard.html" aria-current="page">Dashboard</a>
+      <a href="stok.html">Katalog</a>
+      <a href="checkout.html">Pemesanan</a>
+      <a href="tracking.html">Tracking</a>
+    </nav>
+    <button id="btnKeluar" class="btn ghost" type="button">Keluar</button>
+  </header>
+  <main class="konten">
+    <section class="salam" aria-labelledby="greeting">
+      <h1 id="greeting">Selamat datang!</h1>
+      <p id="tanggal"></p>
+    </section>
+    <nav class="menu" aria-label="Menu utama">
+      <a href="stok.html"><strong>Informasi Stok / Katalog</strong><span>Lihat buku, tambah stok baru, dan masukkan ke keranjang.</span></a>
+      <a href="tracking.html"><strong>Tracking Pengiriman</strong><span>Cari status kiriman dengan nomor Delivery Order.</span></a>
+      <a id="menuLaporan" href="checkout.html#laporan"><strong>Laporan Pemesanan</strong><span>Rekap pesanan yang sudah dibuat beserta totalnya.</span></a>
+      <button id="btnHistory" type="button"><strong>History Transaksi</strong><span>Daftar transaksi sebelumnya dalam pop-up.</span></button>
+    </nav>
+  </main>
+  <footer><small>&copy; 2026 PustakaKita &ndash; Tugas UTS Pemrograman Web 1</small></footer>
+  <script src="js/data.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>
