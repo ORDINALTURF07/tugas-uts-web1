@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pemesanan | PustakaKita</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;600;700&family=Fraunces:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="checkout">
+  <header class="topbar">
+    <a class="brand" href="dashboard.html">Pustaka<b>Kita</b></a>
+    <nav aria-label="Navigasi utama">
+      <a href="dashboard.html">Dashboard</a>
+      <a href="stok.html">Katalog</a>
+      <a href="checkout.html" aria-current="page">Pemesanan</a>
+      <a href="tracking.html">Tracking</a>
+    </nav>
+    <button id="btnKeluar" class="btn ghost" type="button">Keluar</button>
+  </header>
+  <main class="konten">
+    <section class="kartu" aria-labelledby="judulKeranjang">
+      <h1 id="judulKeranjang">Pemesanan</h1>
+      <div class="bar-alat">
+        <select id="pilihBuku" aria-label="Pilih buku" style="max-width:380px"></select>
+        <button id="btnTambah" class="btn" type="button">Tambah ke pesanan</button>
+      </div>
+      <div class="tabel-wrap">
+        <table>
+          <thead><tr><th scope="col">Buku</th><th scope="col" class="angka">Harga</th><th scope="col">Jumlah</th><th scope="col" class="angka">Subtotal</th><th scope="col">Aksi</th></tr></thead>
+          <tbody id="tbodyKeranjang"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <form id="formPesan" class="kartu" novalidate aria-labelledby="judulData">
+      <h2 id="judulData">Data pemesan dan pembayaran</h2>
+      <div class="grid2">
+        <div class="field"><label for="nama">Nama pemesan</label><input id="nama" name="nama" autocomplete="name"><span class="err"></span></div>
+        <div class="field"><label for="emailP">Email</label><input id="emailP" name="email" type="email" autocomplete="email"><span class="err"></span></div>
+        <div class="field"><label for="telepon">No. telepon</label><input id="telepon" name="telepon" type="tel" placeholder="08123456789"><span class="err"></span></div>
+        <div class="field"><label for="pembayaran">Metode pembayaran</label>
+          <select id="pembayaran" name="pembayaran"><option value="">-- Pilih --</option><option>Transfer Bank</option><option>E-Wallet</option><option>Kartu Kredit</option><option>Bayar di Tempat (COD)</option></select><span class="err"></span></div>
+        <div class="field"><label for="ekspedisi">Ekspedisi</label><select id="ekspedisi" name="ekspedisi"><option value="">-- Pilih --</option></select><span class="err"></span></div>
+        <div class="field"><label for="jenisPaket">Jenis paket</label><select id="jenisPaket" name="jenisPaket"><option>Reguler</option><option>Express</option></select><span class="err"></span></div>
+      </div>
+      <div class="field"><label for="alamat">Alamat pengiriman</label><textarea id="alamat" name="alamat" rows="3"></textarea><span class="err"></span></div>
+      <p class="total">Subtotal <span id="rSub"></span> &nbsp;|&nbsp; Ongkir <span id="rOngkir"></span><br>Total bayar <strong id="rTotal"></strong></p>
+      <button class="btn kuning" type="submit">Buat pesanan</button>
+    </form>
+
+    <section id="laporan" class="kartu" aria-labelledby="judulLaporan">
+      <h2 id="judulLaporan">Laporan Pemesanan</h2>
+      <div class="tabel-wrap">
+        <table>
+          <thead><tr><th scope="col">No. DO</th><th scope="col">Tanggal</th><th scope="col">Pemesan</th><th scope="col">Item</th><th scope="col" class="angka">Total</th></tr></thead>
+          <tbody id="tbodyLaporan"></tbody>
+        </table>
+      </div>
+      <p class="total">Total seluruh pesanan <strong id="lapTotal"></strong></p>
+    </section>
+  </main>
+  <footer><small>&copy; 2026 PustakaKita &ndash; Tugas UTS Pemrograman Web 1</small></footer>
+  <script src="js/data.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>
