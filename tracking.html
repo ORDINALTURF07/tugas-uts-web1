@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tracking | PustakaKita</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;600;700&family=Fraunces:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="tracking">
+  <header class="topbar">
+    <a class="brand" href="dashboard.html">Pustaka<b>Kita</b></a>
+    <nav aria-label="Navigasi utama">
+      <a href="dashboard.html">Dashboard</a>
+      <a href="stok.html">Katalog</a>
+      <a href="checkout.html">Pemesanan</a>
+      <a href="tracking.html" aria-current="page">Tracking</a>
+    </nav>
+    <button id="btnKeluar" class="btn ghost" type="button">Keluar</button>
+  </header>
+  <main class="konten">
+    <section class="kartu" aria-labelledby="judulTrack">
+      <h1 id="judulTrack">Informasi Pengiriman</h1>
+      <form id="formCari" class="baris-cari" novalidate>
+        <div class="field" style="flex:1;margin:0"><label for="nomorDO">Nomor Delivery Order</label><input id="nomorDO" name="nomorDO" placeholder="Contoh: 20230012"><span class="err" aria-live="polite"></span></div>
+        <button class="btn" type="submit" style="align-self:start;margin-top:1.55rem">Cari</button>
+      </form>
+    </section>
+    <section id="hasil" class="kartu" aria-labelledby="tNama" hidden>
+      <h2>Pesanan atas nama <span id="tNama"></span></h2>
+      <p>Status: <strong id="tStatus"></strong></p>
+      <div id="progres" class="progres" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-label="Progres pengiriman"><div></div></div>
+      <ol id="langkah" class="langkah"></ol>
+      <dl class="detail">
+        <dt>Ekspedisi</dt><dd id="tEks"></dd>
+        <dt>Tanggal kirim</dt><dd id="tTgl"></dd>
+        <dt>Jenis paket</dt><dd id="tPaket"></dd>
+        <dt>Total pembayaran</dt><dd id="tTotal"></dd>
+      </dl>
+      <h3 style="margin-top:1.5rem">Riwayat perjalanan</h3>
+      <ol id="perjalanan" class="perjalanan"></ol>
+    </section>
+  </main>
+  <footer><small>&copy; 2026 PustakaKita &ndash; Tugas UTS Pemrograman Web 1</small></footer>
+  <script src="js/data.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>
